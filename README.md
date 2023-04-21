@@ -37,5 +37,5 @@ supercell /path/to/test.json
 ```
 
 ## Future
-- [] Write raw results to a file
-- [] Summary by status code
+- [ ] Write raw results to a file
+- [ ] Summary by status code
