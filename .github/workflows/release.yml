@@ -19,10 +19,16 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
 
   upload-assets:
-    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        os:
+          - ubuntu-latest
+          - macos-latest
+    runs-on: ${{ matrix.os }}
     steps:
       - uses: actions/checkout@v3
       - uses: taiki-e/upload-rust-binary-action@v1
         with:
           bin: supercell
+          tar: unix
           token: ${{ secrets.GITHUB_TOKEN }}
